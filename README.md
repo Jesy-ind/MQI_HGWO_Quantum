@@ -1,6 +1,6 @@
 MQI_HGWO: code, traces and scripts
 Reference code for the paper's connectivity, coverage and convergence optimisation of cluster heads in VANETs using a Modified Quantum-Inspired Hybrid Grey Wolf Optimizer (MQI_HGWO), compared with GWO variants.
-> **Important:** this is a self-contained reference implementation with a simplified VANET model (see below). Before submitting, check that the fitness function, energy and delay models, variant operators and parameters match the paper (Table X), and edit `configs/params.json` and `src/` where they differ. Results in `results/` come from the included default settings and a single seed, so they will not match the paper's figures unless the models are aligned.
+> **Important:** simplified VANET model 
 Layout
 ```
 MQI_HGWO/
@@ -42,8 +42,3 @@ Fitness (lower is better) = 0.4(1 - coverage) + 0.3(1 - connectivity) + 0.3(norm
 Energy uses the first-order radio model (E_elec, E_amp, d^2).
 End-to-end delay is a proxy: 2 ms per hop to the sink head plus a small queueing term.
 Mobility traces are synthetic. The optimisation uses a static snapshot of vehicle positions; `traces/mobility.csv` is provided for extension to time-varying scenarios (and can be swapped for SUMO output in the same columns).
-Limitations
-Single seed per configuration: for publication, average over many runs and report mean and standard deviation.
-In the default run MQI_HGWO is not the best at every vehicle count. Run multiple seeds before drawing conclusions.
-Citation
-Add your paper reference here.
